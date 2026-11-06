@@ -1,0 +1,766 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://angelgm-tech.github.io/">
+<meta property="og:title" content="Angel Garcia Martinez · Portfolio">
+<meta property="og:description" content="Portfolio and résumés: AI automation, IT, creative technology, photo and video.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%23101417'/><text x='32' y='41' font-family='Arial,sans-serif' font-weight='700' font-size='22' fill='%23ffffff' text-anchor='middle'>AGM</text></svg>">
+<title>Angel Garcia Martinez</title>
+<meta name="description" content="Portfolio and résumés: AI automation, IT, creative technology, photo and video.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=IBM+Plex+Mono:wght@400;500&family=Instrument+Sans:wght@400..700&display=swap">
+<style>
+/* Layout: a proof sheet. Work is set like a contact sheet: hairline rules, crop marks around media,
+   real frame numbers in mono, and a press color bar under the header. One page, seven résumé views. */
+:root {
+  --paper: #f1f4f5; --card: #ffffff; --ink: #101417; --ink-2: #3a444b; --muted: #61707a;
+  --rule: #d3dbdf; --rule-soft: #e5ebed; --axis: #7e8c95;
+  --cyan: #0a7fa8; --cyan-ink: #075f7e; --cyan-soft: #ddf0f7; --magenta: #c8166f; --yellow: #e8b800; --good: #1f7a4d; --good-soft: #e1f2e8;
+  --font-display: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --font-body: "Instrument Sans", "Segoe UI", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, Consolas, monospace;
+  --radius: 12px; --bar-h: 0px;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #0b0f12; --card: #12191e; --ink: #ecf2f4; --ink-2: #c2ccd2; --muted: #8e9ca5;
+    --rule: #26333b; --rule-soft: #1a242a; --axis: #6f7f89;
+    --cyan: #3fc4ee; --cyan-ink: #8fdcf6; --cyan-soft: #0f2c38; --magenta: #ff4fa7; --yellow: #ffd23d; --good: #4fd08c; --good-soft: #10291d;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #0b0f12; --card: #12191e; --ink: #ecf2f4; --ink-2: #c2ccd2; --muted: #8e9ca5;
+  --rule: #26333b; --rule-soft: #1a242a; --axis: #6f7f89;
+  --cyan: #3fc4ee; --cyan-ink: #8fdcf6; --cyan-soft: #0f2c38; --magenta: #ff4fa7; --yellow: #ffd23d; --good: #4fd08c; --good-soft: #10291d;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--font-body); font-size: 16px; line-height: 1.55; }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 30; background: var(--paper); }
+a { color: var(--cyan-ink); }
+a:hover { color: var(--magenta); }
+:focus-visible { outline: 2px solid var(--cyan); outline-offset: 2px; border-radius: 6px; }
+img, video, svg { max-width: 100%; }
+.wrap { max-width: 1180px; margin-inline: auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+.mono { font-family: var(--font-mono); }
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+/* Header */
+.bar { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20; background: color-mix(in srgb, var(--paper) 90%, transparent); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border-bottom: 1px solid var(--rule); }
+.bar-in { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 18px; padding-block: 10px; }
+@media (max-width: 720px) { .bar { position: static; } }
+.mark { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--ink); margin-right: auto; }
+.mark b { font: 800 15px/1 var(--font-display); letter-spacing: .02em; border: 1.5px solid var(--ink); border-radius: 7px; padding: 6px 7px 5px; }
+.mark span { font: 600 15px/1.2 var(--font-body); }
+.roles { display: flex; flex-wrap: wrap; gap: 6px; order: 3; width: 100%; }
+.pill { font: 500 13px/1 var(--font-body); color: var(--ink-2); text-decoration: none; padding: 8px 12px; border: 1px solid var(--rule); border-radius: 999px; background: var(--card); white-space: nowrap; }
+.pill:hover { color: var(--ink); border-color: var(--axis); }
+.pill[aria-current="page"] { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+@media (min-width: 1080px) { .roles { order: 0; width: auto; } .mark { margin-right: 0; } .bar-actions { margin-left: auto; } }
+.bar-actions { display: flex; gap: 8px; align-items: center; }
+.btn { display: inline-flex; align-items: center; gap: 8px; font: 600 14px/1 var(--font-body); padding: 11px 15px; border-radius: 10px; border: 1px solid var(--rule); background: var(--card); color: var(--ink); text-decoration: none; cursor: pointer; }
+.btn:hover { border-color: var(--axis); color: var(--ink); }
+.btn.solid { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+.btn.solid:hover { background: var(--cyan-ink); border-color: var(--cyan-ink); color: #fff; }
+.btn[disabled] { opacity: .55; cursor: progress; }
+.btn svg { width: 16px; height: 16px; flex: none; }
+.colorbar { display: flex; height: 6px; }
+.colorbar i { flex: 1; }
+.colorbar .c { background: #00a3d9; } .colorbar .m { background: #d6157a; } .colorbar .y { background: #f2cf00; } .colorbar .k { background: #15191c; }
+.colorbar .g7 { background: #4b5257; } .colorbar .g5 { background: #8a9095; } .colorbar .g2 { background: #c9cdd0; } .colorbar .w { background: #f4f5f6; }
+.colorbar .gap { flex: 6; background: transparent; }
+
+/* Hero */
+.hero { display: grid; grid-template-columns: minmax(0, 1.12fr) minmax(0, .88fr); gap: clamp(24px, 4vw, 56px); align-items: center; padding-block: clamp(28px, 5vw, 60px) clamp(22px, 3vw, 36px); }
+@media (max-width: 880px) { .hero { grid-template-columns: minmax(0, 1fr); } }
+.eyebrow { font: 500 12px/1.4 var(--font-mono); letter-spacing: .08em; text-transform: uppercase; color: var(--muted); display: flex; flex-wrap: wrap; gap: 6px 14px; }
+.eyebrow .role-name { color: var(--cyan-ink); }
+.thesis { font-family: var(--font-display); font-weight: 750; font-size: clamp(34px, 5.4vw, 62px); line-height: 1.02; letter-spacing: -.022em; text-wrap: balance; margin: 14px 0 16px; font-variation-settings: "opsz" 96; }
+.lede { font-size: clamp(16px, 1.55vw, 18.5px); color: var(--ink-2); max-width: 60ch; margin: 0; text-wrap: pretty; }
+.meta { font: 400 13px/1.6 var(--font-mono); color: var(--muted); margin-top: 16px; display: flex; flex-wrap: wrap; gap: 4px 16px; }
+.actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 22px; }
+.email-chip { display: inline-flex; align-items: center; gap: 2px; border: 1px solid var(--rule); border-radius: 10px; background: var(--card); padding-left: 12px; }
+.email-chip span { font: 500 14px/1 var(--font-mono); color: var(--ink); user-select: all; }
+.email-chip button { border: 0; background: none; color: var(--ink-2); font: 600 13px/1 var(--font-body); padding: 11px 12px; cursor: pointer; border-left: 1px solid var(--rule); margin-left: 10px; }
+.email-chip button:hover { color: var(--magenta); }
+.hero-visual { display: flex; justify-content: center; min-width: 0; }
+.fade { animation: fadeUp .45s ease both; }
+@keyframes fadeUp { from { opacity: .001; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+
+/* Crop marks: a print-shop frame around media */
+.crop { position: relative; padding: 14px; --cm: var(--axis);
+  background:
+    linear-gradient(var(--cm), var(--cm)) left 0 top 6px / 9px 1px no-repeat, linear-gradient(var(--cm), var(--cm)) left 6px top 0 / 1px 9px no-repeat,
+    linear-gradient(var(--cm), var(--cm)) right 0 top 6px / 9px 1px no-repeat, linear-gradient(var(--cm), var(--cm)) right 6px top 0 / 1px 9px no-repeat,
+    linear-gradient(var(--cm), var(--cm)) left 0 bottom 6px / 9px 1px no-repeat, linear-gradient(var(--cm), var(--cm)) left 6px bottom 0 / 1px 9px no-repeat,
+    linear-gradient(var(--cm), var(--cm)) right 0 bottom 6px / 9px 1px no-repeat, linear-gradient(var(--cm), var(--cm)) right 6px bottom 0 / 1px 9px no-repeat; }
+.phone { width: min(300px, 72vw); aspect-ratio: 9 / 16; border-radius: 26px; overflow: hidden; background: #000; border: 1px solid var(--rule); box-shadow: 0 30px 60px -38px rgba(0,0,0,.6); }
+.phone video, .phone img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.frame-cap { font: 500 11.5px/1.45 var(--font-mono); color: var(--muted); letter-spacing: .03em; margin-top: 10px; text-transform: uppercase; }
+.hero-diagram { width: 100%; background: var(--card); border: 1px solid var(--rule); border-radius: var(--radius); padding: 14px 14px 10px; }
+
+/* Proof stats */
+.stats { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border-block: 1px solid var(--rule); }
+.stat { padding: 18px 18px 20px; border-left: 1px solid var(--rule); min-width: 0; }
+.stat:first-child { border-left: 0; padding-left: 0; }
+.stat b { display: block; font: 750 clamp(28px, 3.4vw, 42px)/1 var(--font-display); letter-spacing: -.015em; font-variant-numeric: tabular-nums; }
+.stat span { display: block; margin-top: 8px; font-size: 14px; color: var(--ink-2); max-width: 26ch; text-wrap: pretty; }
+@media (max-width: 760px) { .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); } .stat:nth-child(3) { border-left: 0; padding-left: 0; } .stat:nth-child(n+3) { border-top: 1px solid var(--rule); } .stat:nth-child(2), .stat:nth-child(4) { padding-right: 0; } }
+
+/* Sections */
+main { display: flex; flex-direction: column; }
+section.block { padding-block: clamp(34px, 5vw, 64px) 0; }
+.sec-head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 8px 20px; margin-bottom: 20px; }
+.sec-head h2 { font: 750 clamp(24px, 2.8vw, 34px)/1.08 var(--font-display); letter-spacing: -.015em; margin: 0; text-wrap: balance; }
+.sec-head .tag { font: 500 12px/1.4 var(--font-mono); letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+.sec-note { color: var(--ink-2); max-width: 64ch; margin: -6px 0 20px; }
+body[data-role="creative"] #reel { order: 2; } body[data-role="creative"] #work { order: 3; } body[data-role="creative"] #photos { order: 4; }
+body[data-role="photo-video"] #reel { order: 2; } body[data-role="photo-video"] #photos { order: 3; } body[data-role="photo-video"] #work { order: 4; }
+#hero-wrap { order: 0; } #stats-wrap { order: 1; } #work { order: 2; } #reel { order: 3; } #photos { order: 4; } #history { order: 5; } #skills { order: 6; } #edu { order: 7; }
+
+/* Work cards */
+.work-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+@media (max-width: 820px) { .work-grid { grid-template-columns: minmax(0, 1fr); } }
+.card { background: var(--card); border: 1px solid var(--rule); border-radius: var(--radius); overflow: hidden; display: flex; flex-direction: column; min-width: 0; }
+.card.wide { grid-column: 1 / -1; display: grid; grid-template-columns: minmax(0, 1.08fr) minmax(0, .92fr); }
+@media (max-width: 820px) { .card.wide { grid-template-columns: minmax(0, 1fr); } }
+.card-media { background: var(--paper); border-bottom: 1px solid var(--rule); padding: 16px; min-width: 0; }
+.card.wide .card-media { border-bottom: 0; border-right: 1px solid var(--rule); display: flex; flex-direction: column; justify-content: center; gap: 14px; }
+@media (max-width: 820px) { .card.wide .card-media { border-right: 0; border-bottom: 1px solid var(--rule); } }
+.card-body { padding: 18px 20px 20px; display: flex; flex-direction: column; gap: 10px; min-width: 0; }
+.kicker { font: 500 11.5px/1.4 var(--font-mono); letter-spacing: .07em; text-transform: uppercase; color: var(--cyan-ink); }
+.card h3 { font: 700 21px/1.18 var(--font-display); letter-spacing: -.01em; margin: 0; text-wrap: balance; }
+.card p { margin: 0; color: var(--ink-2); font-size: 15px; text-wrap: pretty; }
+.card .result { color: var(--ink); font-weight: 600; border-left: 2px solid var(--cyan); padding-left: 10px; }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 4px; }
+.chip { font: 500 12px/1 var(--font-mono); color: var(--ink-2); background: var(--paper); border: 1px solid var(--rule-soft); border-radius: 6px; padding: 6px 8px; }
+.more-row { display: flex; justify-content: center; margin-top: 18px; }
+.scroll-x { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.scroll-x > svg { min-width: 520px; display: block; width: 100%; height: auto; }
+.posters { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+.poster-btn { position: relative; display: block; border: 1px solid var(--rule); border-radius: 12px; overflow: hidden; padding: 0; background: #000; cursor: pointer; aspect-ratio: 9 / 16; }
+.poster-btn img { width: 100%; height: 100%; object-fit: cover; display: block; opacity: .92; transition: opacity .2s, transform .4s; }
+.poster-btn:hover img { opacity: 1; transform: scale(1.02); }
+.poster-btn .play { position: absolute; left: 10px; bottom: 10px; display: inline-flex; align-items: center; gap: 6px; font: 600 12px/1 var(--font-body); color: #fff; background: rgba(0,0,0,.55); padding: 7px 10px 7px 8px; border-radius: 999px; }
+.receipt { font: 400 13px/1.7 var(--font-mono); color: var(--ink); background: var(--card); border: 1px dashed var(--axis); border-radius: 6px; padding: 16px 18px; max-width: 460px; margin-inline: auto; width: 100%; }
+.receipt h4 { font: 500 12px/1.5 var(--font-mono); letter-spacing: .08em; margin: 0 0 6px; color: var(--muted); }
+.receipt .row { display: flex; gap: 8px; align-items: baseline; }
+.receipt .row::after { content: ""; order: 1; flex: 1; border-bottom: 1px dotted var(--axis); transform: translateY(-4px); }
+.receipt .row b { order: 2; font-weight: 500; font-variant-numeric: tabular-nums; }
+.receipt .ok { color: var(--good); }
+.receipt hr { border: 0; border-top: 1px dashed var(--axis); margin: 12px 0; }
+.bars { display: flex; flex-direction: column; gap: 12px; max-width: 460px; margin-inline: auto; width: 100%; }
+.bars .lbl { display: flex; justify-content: space-between; font: 500 12.5px/1.4 var(--font-mono); color: var(--ink-2); margin-bottom: 5px; }
+.bars .track { height: 18px; background: var(--rule-soft); border-radius: 4px; overflow: hidden; }
+.bars .fill { height: 100%; background: var(--axis); }
+.bars .fill.after { background: var(--cyan); min-width: 3px; }
+.checklist { list-style: none; margin: 0 auto; padding: 0; display: grid; gap: 8px; max-width: 480px; width: 100%; }
+.checklist li { display: flex; gap: 10px; align-items: flex-start; font-size: 14.5px; color: var(--ink-2); background: var(--card); border: 1px solid var(--rule-soft); border-radius: 8px; padding: 10px 12px; }
+.checklist li::before { content: ""; flex: none; width: 8px; height: 8px; margin-top: 7px; border-radius: 2px; background: var(--cyan); }
+.yt { display: flex; flex-direction: column; gap: 14px; justify-content: center; align-items: flex-start; background: var(--ink); color: var(--paper); border-radius: 12px; padding: 22px; min-height: 220px; }
+.yt .len { font: 500 12px/1 var(--font-mono); letter-spacing: .08em; opacity: .75; }
+.yt b { font: 750 26px/1.08 var(--font-display); letter-spacing: -.01em; }
+.yt .links { display: flex; flex-wrap: wrap; gap: 8px; }
+.yt a { color: var(--paper); border: 1px solid color-mix(in srgb, var(--paper) 35%, transparent); padding: 9px 12px; border-radius: 9px; text-decoration: none; font: 600 13.5px/1 var(--font-body); }
+.yt a:hover { background: var(--paper); color: var(--ink); }
+
+/* Diagrams */
+.dg rect { fill: var(--card); stroke: var(--axis); stroke-width: 1.25; }
+.dg.acc rect { fill: var(--cyan-soft); stroke: var(--cyan); stroke-width: 2; }
+.dg.good rect { fill: var(--good-soft); stroke: var(--good); stroke-width: 2; }
+.dg.chip rect { fill: var(--paper); stroke: var(--rule); }
+.dn { font-family: var(--font-body); font-size: 13px; font-weight: 600; fill: var(--ink); }
+.dc { font-family: var(--font-body); font-size: 12px; font-weight: 500; fill: var(--ink); }
+.ds { font-family: var(--font-body); font-size: 11.5px; fill: var(--muted); }
+.dt { font-family: var(--font-body); font-size: 14px; font-weight: 600; fill: var(--ink); }
+.dl { font-family: var(--font-mono); font-size: 11px; fill: var(--muted); }
+.da { fill: none; stroke: var(--axis); stroke-width: 1.25; }
+.da.dash { stroke-dasharray: 4 4; }
+.dah { fill: var(--axis); }
+.dbox { fill: none; stroke: var(--rule); stroke-width: 1.25; stroke-dasharray: 5 4; }
+.dband { fill: var(--rule-soft); stroke: var(--rule); stroke-width: 1; }
+
+/* Reel */
+.reel { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px; align-items: start; }
+@media (max-width: 1000px) { .reel { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 520px) { .reel { grid-template-columns: minmax(0, 1fr); } }
+.player .phone { width: 100%; }
+.player h3 { font: 700 17px/1.25 var(--font-display); margin: 12px 0 4px; }
+.player p { margin: 0; font-size: 14px; color: var(--ink-2); }
+.player.focus .phone { outline: 3px solid var(--cyan); outline-offset: 3px; }
+.studio-sig { display: flex; align-items: center; gap: 12px; }
+.studio-sig img { width: 52px; height: 52px; border-radius: 10px; border: 1px solid var(--rule); object-fit: cover; }
+
+/* Photos */
+.filters { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 18px; }
+.filters button { font: 500 13px/1 var(--font-body); color: var(--ink-2); background: var(--card); border: 1px solid var(--rule); border-radius: 999px; padding: 8px 12px; cursor: pointer; }
+.filters button[aria-pressed="true"] { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+.gallery { columns: 3 280px; column-gap: 16px; }
+.shot { break-inside: avoid; margin: 0 0 16px; }
+.shot button { display: block; width: 100%; padding: 0; border: 0; background: none; cursor: zoom-in; border-radius: 10px; overflow: hidden; }
+.shot img { width: 100%; height: auto; display: block; background: var(--rule-soft); transition: transform .5s; }
+.shot button:hover img { transform: scale(1.015); }
+.shot figcaption { font: 500 11px/1.5 var(--font-mono); color: var(--muted); letter-spacing: .02em; margin-top: 7px; display: flex; flex-wrap: wrap; gap: 2px 10px; }
+.shot figcaption .who { color: var(--ink-2); }
+
+/* History */
+.timeline { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--rule); }
+.timeline li { display: grid; grid-template-columns: 128px minmax(0, 1fr); gap: 4px 22px; padding: 16px 0; border-bottom: 1px solid var(--rule); }
+.timeline .when { font: 500 13px/1.5 var(--font-mono); color: var(--muted); font-variant-numeric: tabular-nums; }
+.timeline .what b { display: block; font: 700 17px/1.3 var(--font-display); }
+.timeline .what span { display: block; color: var(--ink-2); font-size: 14.5px; }
+.timeline .what em { font-style: normal; color: var(--ink-2); font-size: 14.5px; }
+.timeline li.hl .when { color: var(--cyan-ink); }
+.timeline li.hl .what b::after { content: ""; display: inline-block; width: 7px; height: 7px; border-radius: 50%; background: var(--cyan); margin-left: 8px; vertical-align: 3px; }
+@media (max-width: 600px) { .timeline li { grid-template-columns: minmax(0, 1fr); } }
+
+/* Skills + education */
+.skill-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
+.skill { background: var(--card); border: 1px solid var(--rule); border-radius: var(--radius); padding: 16px 18px; }
+.skill h3 { font: 700 16px/1.3 var(--font-display); margin: 0 0 8px; }
+.skill p { margin: 0; color: var(--ink-2); font-size: 14.5px; }
+.edu { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; }
+.edu-item { border-top: 2px solid var(--ink); padding-top: 12px; }
+.edu-item b { display: block; font: 700 16.5px/1.3 var(--font-display); }
+.edu-item span { display: block; color: var(--ink-2); font-size: 14.5px; }
+.edu-item code { font: 500 12px/1.4 var(--font-mono); color: var(--muted); }
+
+/* Footer, toast, lightbox */
+footer { margin-top: clamp(40px, 6vw, 80px); border-top: 1px solid var(--rule); }
+.foot { display: flex; flex-wrap: wrap; gap: 10px 24px; justify-content: space-between; align-items: center; padding-block: 22px calc(22px + env(safe-area-inset-bottom, 0px)); font-size: 14px; color: var(--muted); }
+.foot a { color: var(--ink-2); }
+#toast { position: fixed; left: 50%; bottom: calc(18px + env(safe-area-inset-bottom, 0px)); transform: translateX(-50%) translateY(20px); background: var(--ink); color: var(--paper); font: 500 14px/1.4 var(--font-body); padding: 11px 16px; border-radius: 10px; opacity: 0; pointer-events: none; transition: opacity .2s, transform .2s; z-index: 50; max-width: calc(100vw - 32px); }
+#toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+dialog#lb { border: 0; padding: 0; background: transparent; max-width: min(1200px, 96vw); max-height: 94vh; width: 100%; }
+dialog#lb::backdrop { background: rgba(6, 9, 11, .88); }
+.lb-in { display: flex; flex-direction: column; gap: 10px; align-items: center; }
+.lb-in img { max-height: 80vh; width: auto; max-width: 100%; border-radius: 6px; background: #111; }
+.lb-cap { color: #e9eef0; font: 500 12.5px/1.5 var(--font-mono); text-align: center; max-width: 80ch; padding-inline: 12px; }
+.lb-nav { display: flex; gap: 8px; }
+.lb-nav button { font: 600 14px/1 var(--font-body); color: #fff; background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.25); border-radius: 9px; padding: 10px 14px; cursor: pointer; }
+.lb-nav button:hover { background: rgba(255,255,255,.22); }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; } }
+</style>
+</head>
+<body>
+<header class="bar">
+  <div class="wrap bar-in">
+    <a class="mark" href="#cv" aria-label="Angel Garcia Martinez, full CV view"><b>AGM</b><span>Angel Garcia Martinez</span></a>
+    <nav class="roles" id="roles" aria-label="Résumé views"></nav>
+    <div class="bar-actions">
+      <button class="btn solid" id="dl-btn" type="button" hidden>
+        <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1.5v8.2M4.6 6.5 8 9.9l3.4-3.4M2.5 12.5h11" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span id="dl-label">Résumé PDF</span>
+      </button>
+    </div>
+  </div>
+  <div class="colorbar" aria-hidden="true"><i class="c"></i><i class="m"></i><i class="y"></i><i class="k"></i><i class="gap"></i><i class="g7"></i><i class="g5"></i><i class="g2"></i><i class="w"></i></div>
+</header>
+
+<main>
+  <div id="hero-wrap" class="wrap">
+    <section class="hero" aria-labelledby="thesis">
+      <div class="fade" id="hero-text">
+        <div class="eyebrow"><span class="role-name" id="role-title"></span><span>San Jose, CA</span><span>English / Español</span></div>
+        <h1 class="thesis" id="thesis"></h1>
+        <p class="lede" id="lede"></p>
+        <div class="actions">
+          <span class="email-chip"><span id="email">angelgm.tech@gmail.com</span><button type="button" id="copy-email">Copy email</button></span>
+          <a class="btn" href="https://www.linkedin.com/in/angelgtech" target="_blank" rel="noopener">LinkedIn ↗</a>
+        </div>
+        <div class="meta"><span>Google IT Support certified</span><span>Building since 2008</span><span>Built with Claude Code</span></div>
+      </div>
+      <div class="hero-visual" id="hero-visual"></div>
+    </section>
+  </div>
+
+  <div id="stats-wrap" class="wrap"><div class="stats" id="stats" aria-label="Highlights"></div></div>
+
+  <section class="block" id="work" aria-labelledby="work-h">
+    <div class="wrap">
+      <div class="sec-head"><h2 id="work-h">Selected work</h2><span class="tag" id="work-count"></span></div>
+      <div class="work-grid" id="work-grid"></div>
+      <div class="more-row"><button class="btn" id="more-btn" type="button" hidden></button></div>
+    </div>
+  </section>
+
+  <section class="block" id="reel" aria-labelledby="reel-h">
+    <div class="wrap">
+      <div class="sec-head"><h2 id="reel-h">Video reel</h2><span class="tag">HighCloudStudios · 9:16</span></div>
+      <p class="sec-note">Event recaps cut for phones. Tap a video to play it with sound.</p>
+      <div class="reel">
+        <div class="player" id="p-oakland">
+          <div class="phone"><video controls playsinline preload="none" poster="media/v/poster-oakland.webp" aria-label="Oakland Roots SC game-day photobooth recap, 66 seconds"><source src="media/v/oakland-roots-photo-wall.mp4" type="video/mp4"></video></div>
+          <h3>Oakland Roots SC photo wall</h3>
+          <p>Game-day photobooth recap, built by script from the day's prints. 66 s.</p>
+        </div>
+        <div class="player" id="p-jay">
+          <div class="phone"><video controls playsinline preload="none" poster="media/v/poster-jay.webp" aria-label="TNBA Runway recap, Jay Blue cut, 24 seconds"><source src="media/v/runway-jay-blue.mp4" type="video/mp4"></video></div>
+          <h3>TNBA Runway · Jay Blue</h3>
+          <p>One of seven recap cuts from a single runway night. 24 s.</p>
+        </div>
+        <div class="player" id="p-phil">
+          <div class="phone"><video controls playsinline preload="none" poster="media/v/poster-phil.webp" aria-label="TNBA Runway recap, Phil Q cut, 22 seconds"><source src="media/v/runway-phil-q.mp4" type="video/mp4"></video></div>
+          <h3>TNBA Runway · Phil Q</h3>
+          <p>Fast cuts with film and glitch textures, closed with the studio card. 22 s.</p>
+        </div>
+        <div class="player" id="p-hss">
+          <div class="yt">
+            <span class="len">90 S · AFTER EFFECTS · 16:9 + 9:16</span>
+            <b>Holiday Shopping Spree 2026 campaign reel</b>
+            <span>“It's Time to Build Your Teams!” made for Sunday Friends Foundation and published on YouTube.</span>
+            <span class="links"><a href="https://www.youtube.com/watch?v=NugFSYtmzRk" target="_blank" rel="noopener">Watch on YouTube ↗</a><a href="https://www.youtube.com/shorts/PcVktc6wUIM" target="_blank" rel="noopener">Watch the Short ↗</a></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="photos" aria-labelledby="photos-h">
+    <div class="wrap">
+      <div class="sec-head"><h2 id="photos-h">Photographs</h2><span class="tag"><a href="https://www.instagram.com/addiesphotographs" target="_blank" rel="noopener">@addiesphotographs ↗</a></span></div>
+      <p class="sec-note">Events, portraits, weddings and photobooth work with HighCloudStudios and Addie's Photography. Each caption shows the original frame number and camera settings.</p>
+      <div class="filters" id="filters" role="group" aria-label="Filter photographs"></div>
+      <div class="gallery" id="gallery"></div>
+    </div>
+  </section>
+
+  <section class="block" id="history" aria-labelledby="history-h">
+    <div class="wrap">
+      <div class="sec-head"><h2 id="history-h">Experience</h2><span class="tag" id="history-tag">2008 – today</span></div>
+      <ol class="timeline" id="timeline"></ol>
+    </div>
+  </section>
+
+  <section class="block" id="skills" aria-labelledby="skills-h">
+    <div class="wrap">
+      <div class="sec-head"><h2 id="skills-h">Skills</h2><span class="tag" id="skills-tag"></span></div>
+      <div class="skill-grid" id="skill-grid"></div>
+    </div>
+  </section>
+
+  <section class="block" id="edu" aria-labelledby="edu-h">
+    <div class="wrap">
+      <div class="sec-head"><h2 id="edu-h">Education, certificates and honors</h2></div>
+      <div class="edu">
+        <div class="edu-item"><b>Google IT Support Professional Certificate</b><span>Google / Coursera · Oct 2024</span><code>credential 68B1TJM87YXH</code></div>
+        <div class="edu-item"><b>IT Security: Defense against the digital dark arts</b><span>Google · Oct 2024</span><code>credential TL7QZH4BVGNS</code></div>
+        <div class="edu-item"><b>IT Support Training Program</b><span>JobTrain, Menlo Park, CA · Aug – Oct 2024. Hands-on Linux and Windows labs, accounts and permissions, networking, simulated remote support.</span></div>
+        <div class="edu-item"><b>Google IT courses</b><span>System Administration and IT Infrastructure Services · Operating Systems and You · Technical Support Fundamentals · The Bits and Bytes of Computer Networking (Aug – Sep 2024)</span></div>
+        <div class="edu-item"><b>General coursework</b><span>De Anza College, Cupertino, CA</span></div>
+        <div class="edu-item"><b>Lisa Y. Sullivan Award, 2006</b><span>One Economy Corporation: a $5,000 scholarship for youth who use technology to transform their communities. Spoke at the award gala in San Francisco.</span></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <span>Angel Garcia Martinez · San Jose, CA · angelgm.tech@gmail.com</span>
+    <span>Photos: HighCloudStudios and Addie's Photography · Built with Claude Code · Updated Nov 2026</span>
+  </div>
+</footer>
+
+<div id="toast" role="status" aria-live="polite"></div>
+
+<dialog id="lb" aria-label="Photo viewer">
+  <div class="lb-in">
+    <img id="lb-img" alt="">
+    <div class="lb-cap" id="lb-cap"></div>
+    <div class="lb-nav"><button type="button" id="lb-prev">← Previous</button><button type="button" id="lb-close">Close</button><button type="button" id="lb-next">Next →</button></div>
+  </div>
+</dialog>
+
+<script>
+(() => {
+"use strict";
+const PHOTOS = [{"slug": "event-vendor-table", "group": "events", "credit": "HighCloudStudios", "alt": "A smiling vendor dances behind her table of zines and shirts at an art-filled pop-up, lit by a warm globe lamp.", "frame": "092A3577", "settings": "f/2.8 · 1/200 · ISO 10000 · 48 mm", "tw": 720, "th": 480}, {"slug": "noise-crowd-truck", "group": "events", "credit": "HighCloudStudios", "alt": "A crowd packs around a black box truck painted with yellow 'Noise Complaints, August 23, San Jose' lettering.", "frame": "", "settings": "f/5.6 · 1/400 · ISO 640 · 28 mm", "tw": 576, "th": 720}, {"slug": "noise-truck-roof", "group": "events", "credit": "HighCloudStudios", "alt": "Friends sit on the roof of the Noise Complaints truck under a bright blue sky.", "frame": "", "settings": "", "tw": 720, "th": 480}, {"slug": "nightclub-group", "group": "events", "credit": "HighCloudStudios", "alt": "Five guests pose under purple stage lights at a San Francisco nightclub.", "frame": "191A4966", "settings": "f/2.8 · 1/80 · ISO 5000 · 35 mm", "tw": 720, "th": 514}, {"slug": "editorial-kegs", "group": "portraits", "credit": "HighCloudStudios", "alt": "A man in sunglasses and a graphic tee holds a glass of red wine beside a wall of steel kegs.", "frame": "", "settings": "f/2.8 · 1/200 · ISO 1600 · 50 mm", "tw": 720, "th": 576}, {"slug": "studio-black", "group": "portraits", "credit": "HighCloudStudios", "alt": "A man in a white beanie and printed tee crouches against a black studio backdrop.", "frame": "", "settings": "f/5 · 1/125 · ISO 800 · 50 mm", "tw": 576, "th": 720}, {"slug": "editorial-blue", "group": "portraits", "credit": "Addie's Photography", "alt": "A young man in sunglasses stands in profile against a saturated cobalt-blue backdrop.", "frame": "", "settings": "", "tw": 480, "th": 720}, {"slug": "flower-wall-portrait", "group": "portraits", "credit": "HighCloudStudios", "alt": "A woman holds a pink bouquet in front of a wall of pink and red roses.", "frame": "", "settings": "f/3.2 · 1/200 · 50 mm", "tw": 720, "th": 576}, {"slug": "small-business-portrait", "group": "portraits", "credit": "Addie's Photography", "alt": "A beauty-studio owner stands at her counter under a pink neon 'Good Vibes Only' sign on a rose wall.", "frame": "", "settings": "f/2.8 · 1/200 · ISO 1250 · 50 mm", "tw": 720, "th": 480}, {"slug": "engagement-sunset", "group": "weddings", "credit": "Addie's Photography", "alt": "A couple embraces on a hillside, seen from behind, as the sun sets over golden grass.", "frame": "AV7A3615", "settings": "f/3.2 · 1/200 · ISO 1250 · 44 mm", "tw": 720, "th": 480}, {"slug": "engagement-night-arch", "group": "weddings", "credit": "Addie's Photography", "alt": "A newly engaged couple stands under a floral arch at dusk with city lights spread out below.", "frame": "AV7A3732", "settings": "f/2.8 · 1/80 · ISO 2000 · 35 mm", "tw": 720, "th": 480}, {"slug": "city-hall-stairs", "group": "weddings", "credit": "Addie's Photography", "alt": "A bride and groom sit together on the grand marble staircase of San Francisco City Hall.", "frame": "", "settings": "f/4 · 1/60 · ISO 1600 · 50 mm", "tw": 720, "th": 480}, {"slug": "city-hall-walk", "group": "weddings", "credit": "Addie's Photography", "alt": "A couple walks hand in hand down a sunlit marble hallway at City Hall.", "frame": "", "settings": "f/2.8 · 1/200 · ISO 1600 · 50 mm", "tw": 480, "th": 720}, {"slug": "city-hall-bw", "group": "weddings", "credit": "Addie's Photography", "alt": "Black-and-white portrait of a bride and groom seated on curved City Hall steps.", "frame": "", "settings": "f/2.8 · 1/200 · ISO 1600 · 50 mm", "tw": 720, "th": 480}, {"slug": "wood-wall-couple", "group": "weddings", "credit": "Addie's Photography", "alt": "A groom in a white tuxedo touches foreheads with his bride against a weathered wood wall.", "frame": "", "settings": "f/3.2 · 1/200 · ISO 800 · 50 mm", "tw": 720, "th": 480}, {"slug": "rings-detail", "group": "weddings", "credit": "Addie's Photography", "alt": "Wedding rings resting on beaded lace beside white roses.", "frame": "", "settings": "f/2 · 1/200 · ISO 320 · 50 mm", "tw": 720, "th": 480}, {"slug": "booth-cover-oakland", "group": "booth", "credit": "HighCloudStudios", "alt": "A photobooth print designed as an Oakland Roots game-day magazine cover, with a guest in sunglasses.", "frame": "", "settings": "", "tw": 484, "th": 720}, {"slug": "booth-strip-y2k", "group": "booth", "credit": "HighCloudStudios", "alt": "A pair of Y2K-themed photobooth strips with blue butterfly and heart graphics.", "frame": "", "settings": "", "tw": 480, "th": 720}, {"slug": "booth-keychain", "group": "booth", "credit": "HighCloudStudios", "alt": "A hand holds a custom photo keychain in front of pink roses.", "frame": "", "settings": "", "tw": 720, "th": 720}, {"slug": "booth-party-print", "group": "booth", "credit": "HighCloudStudios", "alt": "A hand holds a printed holiday-party photobooth card with festive red framing.", "frame": "", "settings": "f/1.8 · 1/40 · ISO 320 · 5 mm", "tw": 540, "th": 720}, {"slug": "headshot-1", "group": "headshots", "credit": "Addie's Photography", "alt": "Corporate headshot of a man in glasses and a navy blazer on a dark gray backdrop.", "frame": "", "settings": "f/4 · 1/200 · ISO 2000 · 135 mm", "tw": 576, "th": 720}, {"slug": "headshot-2", "group": "headshots", "credit": "Addie's Photography", "alt": "Corporate headshot of a smiling woman in a black blazer on a dark gray backdrop.", "frame": "", "settings": "f/4 · 1/200 · ISO 2000 · 120 mm", "tw": 579, "th": 720}, {"slug": "headshot-3", "group": "headshots", "credit": "Addie's Photography", "alt": "Corporate headshot of a man in glasses and a gray blazer on a dark gray backdrop.", "frame": "", "settings": "f/4 · 1/200 · ISO 2000 · 100 mm", "tw": 576, "th": 720}, {"slug": "home-studio", "group": "studio", "credit": "HighCloudStudios", "alt": "A small home photo studio: a softbox on a stand facing a tan paper backdrop beside a rainbow backdrop roll.", "frame": "", "settings": "f/4 · 1/200 · ISO 1250 · 24 mm", "tw": 576, "th": 720}, {"slug": "studio-logo", "group": "studio", "credit": "HighCloudStudios", "alt": "The HighCloudStudios logo: pink and purple clouds above the studio name.", "frame": "", "settings": "", "tw": 720, "th": 720}];
+
+/* ---------- Diagrams (inline SVG, colors from theme tokens) ---------- */
+const esc = s => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;");
+function box(x, y, w, h, name, sub, cls) {
+  const cx = x + w / 2, cy = y + h / 2;
+  return `<g class="dg ${cls || ""}"><rect x="${x}" y="${y}" width="${w}" height="${h}" rx="8"/>` +
+    `<text class="dn" x="${cx}" y="${sub ? cy - 3 : cy + 4.5}" text-anchor="middle">${esc(name)}</text>` +
+    (sub ? `<text class="ds" x="${cx}" y="${cy + 14}" text-anchor="middle">${esc(sub)}</text>` : "") + `</g>`;
+}
+function chip(x, y, w, h, label) {
+  return `<g class="dg chip"><rect x="${x}" y="${y}" width="${w}" height="${h}" rx="6"/><text class="dc" x="${x + w / 2}" y="${y + h / 2 + 4}" text-anchor="middle">${esc(label)}</text></g>`;
+}
+const arrow = (id, d, dash) => `<path class="da${dash ? " dash" : ""}" d="${d}" marker-end="url(#ah-${id})"/>`;
+const defs = id => `<defs><marker id="ah-${id}" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path class="dah" d="M0 0L10 5L0 10z"/></marker></defs>`;
+const svg = (id, h, title, body) => `<svg viewBox="0 0 640 ${h}" role="img" aria-label="${esc(title)}">${defs(id)}<text class="dt" x="16" y="24">${esc(title)}</text>${body}</svg>`;
+
+const DIAGRAMS = {
+  agents: () => svg("agents", 318, "One coordinator, specialist agents, and a person who says yes",
+    box(16, 60, 108, 52, "Request", "a job to do") +
+    box(148, 52, 140, 68, "Coordinator", "routes each job", "acc") +
+    `<rect class="dbox" x="312" y="36" width="312" height="104" rx="10"/><text class="dl" x="324" y="54">SPECIALIST AGENTS</text>` +
+    chip(324, 64, 96, 28, "Attendance") + chip(424, 64, 96, 28, "Points") + chip(524, 64, 96, 28, "Inventory") +
+    chip(324, 100, 96, 28, "Comms") + chip(424, 100, 96, 28, "Inbox triage") + chip(524, 100, 96, 28, "Program admin") +
+    arrow("agents", "M124 86 H146") + arrow("agents", "M288 86 H310") +
+    box(148, 196, 140, 56, "Guardrail hook", "checks each action") +
+    box(312, 196, 156, 56, "A person says yes", "before it ships", "good") +
+    box(492, 196, 132, 56, "Live", "then verified") +
+    arrow("agents", "M372 140 V168 H218 V194") + arrow("agents", "M288 224 H310") + arrow("agents", "M468 224 H490") +
+    `<rect class="dband" x="16" y="278" width="608" height="30" rx="8"/><text class="ds" x="320" y="297" text-anchor="middle">Shared notice board · hand-off notes · two-computer relay · scheduled runs</text>` +
+    arrow("agents", "M148 104 H136 V276", true)),
+  paper: () => svg("paper", 236, "Every row gets a confidence tier before it counts",
+    box(16, 52, 128, 56, "Sign-in sheets", "handwritten") +
+    box(168, 52, 128, 56, "AI vision", "reads each row") +
+    box(320, 52, 128, 56, "Roster check", "names and IDs") +
+    box(496, 52, 128, 56, "Database", "audit log, undo") +
+    arrow("paper", "M144 80 H166") + arrow("paper", "M296 80 H318") + arrow("paper", "M448 72 H494") +
+    `<text class="dl" x="472" y="64" text-anchor="middle">HIGH</text>` +
+    box(320, 164, 128, 56, "Person reviews", "unsure rows only") +
+    box(496, 164, 128, 56, "Funder report", "linked to scans", "acc") +
+    arrow("paper", "M384 108 V162") + `<text class="dl" x="392" y="140">REVIEW</text>` +
+    arrow("paper", "M560 108 V162") + arrow("paper", "M448 192 H472 V98 H494")),
+  inventory: () => {
+    const n = (cx, cy, label, cls) => box(cx - 72, cy - 20, 144, 40, label, "", cls);
+    return svg("inventory", 256, "Each cycle updates stock by itself",
+      n(123, 107, "Pre-order form") + n(320, 68, "Packing sheet") + n(517, 107, "Bags given out") +
+      n(517, 185, "Stock updates", "acc") + n(320, 224, "What to reorder") + n(123, 185, "Deliveries in") +
+      arrow("inventory", "M195 98 L246 76") + arrow("inventory", "M392 76 L443 98") + arrow("inventory", "M517 127 V163") +
+      arrow("inventory", "M445 194 L394 214") + arrow("inventory", "M248 214 L197 194") + arrow("inventory", "M123 165 V129") +
+      `<text class="dl" x="131" y="150">next cycle</text>` +
+      `<text class="dn" x="320" y="142" text-anchor="middle">Basic-needs bags</text><text class="ds" x="320" y="160" text-anchor="middle">550+ tests · practice copy</text>`);
+  },
+  photowall: () => svg("photowall", 124, "A folder of prints becomes a finished recap, by script",
+    box(12, 48, 136, 56, "Prints folder", "from the booth") +
+    box(172, 48, 136, 56, "After Effects", "script builds wall", "acc") +
+    box(332, 48, 136, 56, "Render + encode", "aerender, ffmpeg") +
+    box(492, 48, 136, 56, "Ready to post", "9:16, 16:9, phone") +
+    arrow("photowall", "M148 76 H170") + arrow("photowall", "M308 76 H330") + arrow("photowall", "M468 76 H490")),
+  guard: () => svg("guard", 212, "Routine actions run; risky ones wait for a person",
+    box(16, 92, 136, 56, "Agent action", "files, commands") +
+    box(184, 92, 136, 56, "Rulebook", "fences and asks") +
+    box(376, 44, 104, 40, "Allow", "") + box(376, 100, 104, 40, "Ask", "", "acc") + box(376, 156, 104, 40, "Deny", "") +
+    box(512, 96, 112, 48, "A person", "says yes or no", "good") +
+    arrow("guard", "M152 120 H182") + arrow("guard", "M320 120 H344 V64 H374") + arrow("guard", "M320 120 H374") +
+    arrow("guard", "M320 120 H344 V176 H374") + arrow("guard", "M480 120 H510")),
+  points: () => svg("points", 184, "Points stay current without manual downloads",
+    box(16, 72, 144, 56, "Case management", "system of record") +
+    box(248, 72, 152, 56, "Points engine", "Sheets + Apps Script", "acc") +
+    box(464, 40, 160, 52, "Family tiers", "3,000+ families") +
+    box(464, 116, 160, 52, "Fix list", "what staff correct") +
+    `<text class="dl" x="204" y="62" text-anchor="middle">robot, scheduled</text>` +
+    arrow("points", "M160 100 H246") + arrow("points", "M400 100 H432 V66 H462") + arrow("points", "M400 100 H432 V142 H462")),
+  market: () => svg("market", 262, "Every run passes the same checks; AI helpers only advise",
+    box(16, 48, 128, 56, "Live market data", "every 15 minutes") +
+    box(168, 48, 128, 56, "Tested rules", "140+ simulations") +
+    box(320, 48, 128, 56, "Hard limits", "caps in code", "acc") +
+    box(472, 48, 152, 56, "Restricted key", "can't withdraw funds") +
+    arrow("market", "M144 76 H166") + arrow("market", "M296 76 H318") + arrow("market", "M448 76 H470") +
+    box(472, 136, 152, 52, "Balance check", "after every run") +
+    box(312, 136, 136, 52, "Pause + alert", "mismatch or off switch", "good") +
+    arrow("market", "M548 104 V134") + arrow("market", "M472 162 H450") +
+    `<rect class="dband" x="16" y="216" width="608" height="32" rx="8"/><text class="ds" x="320" y="236" text-anchor="middle">AI helpers read research videos and news → scored JSON reports · read-only, they can't act</text>` +
+    arrow("market", "M232 214 V106", true))
+};
+const diagram = key => `<div class="scroll-x">${DIAGRAMS[key]()}</div>`;
+
+/* ---------- Work ---------- */
+const WORK = {
+  "agent-team": { kicker: "AI agents · Sunday Friends Foundation", title: "An agent team that runs a nonprofit's back office", media: { diagram: "agents" },
+    body: ["A coordinator agent in Claude Code routes each request to specialist agents for attendance, points, inventory, communications, inbox triage and program admin. Each has its own instructions, skills and notebook.",
+      "Two computers share one notice board and hand-off notes. A relay lets one agent take over when the other hits its usage limit, and a clash guard holds a step if the other agent changed the same file in the last 30 minutes."],
+    result: "Agents only draft. Code ships after a named yes, a dry run and a read-back check that the live code matches the tested build.",
+    chips: ["Claude Code", "multi-agent", "hooks", "scheduled runs", "Python", "170+ tests"] },
+  "guardrails": { kicker: "Agent safety", title: "Guardrails that ask before an agent acts", media: { diagram: "guard" },
+    body: ["Five Python hooks check every command, file path and connector call my AI agents make. Work data is fenced off, and sending, sharing, deleting, publishing and any financial action wait for a person's yes."],
+    result: "300+ automated checks keep the rules honest.", chips: ["Python", "Claude Code hooks", "pytest"] },
+  "market-data": { kicker: "Personal project · Real-time automation", title: "Real-time market-data automation with hard safety limits", media: { diagram: "market" },
+    body: ["A Python service on a live financial API runs every 15 minutes. Hard limits live in the code, its key can't withdraw funds, and a balance check after every run pauses it and emails me on any mismatch. One click turns it off.",
+      "It went live in stages: a testing lab ran 140+ simulations with real fees, then a 12-hour dry run on live data, then half size. Locked-down AI helpers turn research videos and news into scored JSON reports, but they can't act. A five-tab live dashboard streams every event to my laptop and phone."],
+    result: "100+ automated tests; an edge-case review fixed 13 failure modes before launch.", chips: ["Python", "REST API", "signed requests", "headless agents", "Server-Sent Events", "Task Scheduler"] },
+  "relay": { kicker: "AI agents · Alerts", title: "Email alerts I can answer in plain words", media: { checklist: ["Alerts and a daily summary go to the owner only", "Replies are read by an AI agent with read-only tools", "It can only answer, pause, mute or queue a request for approval", "At-most-once sending, hourly and daily caps, quiet hours"] },
+    body: ["The system emails me when something needs attention, and I reply in plain words. A headless AI agent reads each reply and picks one action from a short safe list; anything else waits for my approval."],
+    result: "After a retry bug resent one alert dozens of times, I rebuilt sending as at-most-once, with a message-ID check and hourly and daily caps.", chips: ["Gmail API", "headless agents", "JSON output", "rate limits", "incident fix"] },
+  "paper-to-data": { kicker: "Document AI", title: "Handwritten sign-in sheets, turned into clean records", media: { diagram: "paper" },
+    body: ["An AI vision model reads each row. Names and IDs are matched against the roster, even with a missing accent or an ID that's off by a digit, and every row gets a confidence tier: HIGH goes in, REVIEW waits for a person.",
+      "Underneath sit a SQLite database of 7,500+ attendance records, an audit log with undo, and backups."],
+    result: "Funder reports built on it count 1,000+ families and 4,000+ people served by food distribution in a year.",
+    chips: ["LLM vision", "fuzzy matching", "SQLite", "Python"] },
+  "points-engine": { kicker: "Data systems", title: "A points-and-tiers engine for 3,000+ families", media: { diagram: "points" },
+    body: ["Families earn points for classes and volunteering, and points unlock basic-needs support. The engine, in Google Sheets and Apps Script, scores every family into tiers, checks staff uploads against the case-management system and lists the fixes each record needs.",
+      "A Python browser robot pulls case-management exports on a schedule without storing any password, so nobody downloads files by hand."],
+    chips: ["Google Apps Script", "Sheets", "Python", "browser automation"] },
+  "inventory": { kicker: "Operations", title: "Basic-needs inventory that keeps itself up to date", media: { diagram: "inventory" },
+    body: ["Pre-order forms build each packing sheet. Stock updates as bags go out, deliveries are logged from order emails and reports, and the sheet suggests what to reorder.",
+      "550+ automated tests and a practice copy protect every update; more than a dozen releases went out in October 2026 alone."],
+    result: "650+ bags reached 170+ families in Jul–Sep 2026.", chips: ["Apps Script", "Google Sheets", "sandbox testing", "staged releases"] },
+  "reports": { kicker: "Impact reporting", title: "Funder reports with a receipt for every number", media: { receipt: true },
+    body: ["A year of food distribution and a quarterly family report covering 250+ families, children 0–5, online classes and demographics. Every number traces back to its source files."],
+    chips: ["data lineage", "SQLite", "Google Sheets"] },
+  "photo-wall": { kicker: "HighCloudStudios · After Effects", title: "A photo-wall recap built by script", media: { diagram: "photowall", posters: [["oakland", "poster-oakland.webp", "Oakland Roots SC photo wall"]] },
+    body: ["An After Effects ExtendScript lays out a 3D wall from a folder of photobooth prints, aerender renders it, and ffmpeg encodes 9:16, 16:9 and phone copies. Each new event starts from a folder of photos, not a blank timeline."],
+    result: "Oakland Roots SC vs San Antonio FC: game-day photobooth recap, 66 s.", chips: ["ExtendScript", "After Effects", "aerender", "ffmpeg"] },
+  "runway": { kicker: "HighCloudStudios · Video", title: "Runway recap series for TNBA Runway", media: { posters: [["jay", "poster-jay.webp", "Jay Blue cut"], ["phil", "poster-phil.webp", "Phil Q cut"]] },
+    body: ["Seven vertical recap cuts from one runway night: performers, models and looks, cut fast with film and glitch textures and closed with the studio card."],
+    chips: ["video editing", "9:16", "motion graphics"] },
+  "hss-promo": { kicker: "After Effects · Campaign", title: "Holiday Shopping Spree 2026 campaign reel", media: { youtube: true },
+    body: ["A 90-second After Effects reel for the “It's Time to Build Your Teams!” campaign, cut in 16:9 and 9:16 for Sunday Friends Foundation and published on YouTube."],
+    chips: ["After Effects", "motion graphics", "16:9 + 9:16"] },
+  "it-ops": { kicker: "IT", title: "Nonprofit IT, end to end", media: { checklist: ["Google Workspace accounts and account-security alerts", "Trend Micro endpoint security on 10 devices", "Device inventory in Snipe-IT, self-hosted in Docker and mirrored to a Google Sheet", "10 retired MacBook Pros tested and converted to ChromeOS Flex", "Santa Clara County HMIS data-security and client-consent training"] },
+    body: ["Day-to-day IT for a small nonprofit team, with tech support for staff and families in English and Spanish."],
+    chips: ["Google Workspace", "Snipe-IT", "Docker", "ChromeOS Flex", "endpoint security"] },
+  "inbox": { kicker: "Automation", title: "Inbox cleanup with an undo button", media: { bars: true },
+    body: ["A multi-account Gmail tool on Google Cloud OAuth archived 16,000+ emails in batches I approved, with an undo log for every message and nothing deleted.",
+      "At work, a 150-label system sorted 3,500+ backlogged messages through the Gmail API, and a scheduled AI triage labels new mail every morning."],
+    chips: ["Gmail API", "OAuth", "Python", "undo logs"] },
+  "library": { kicker: "Web app · AI sorting", title: "A saved-posts library, sorted by AI",
+    body: ["A Flask app holds a 1,600+ item media library and 900+ saved Instagram and Facebook posts with their captions. It streams video straight from disk and saves mood boards.",
+      "An AI agent sorted the posts onto topic shelves in reviewed batches, with contact sheets to check its picks; my own pick always wins."],
+    chips: ["Flask", "Python", "LLM classification", "media streaming"] },
+  "comms": { kicker: "Communications · Programs", title: "Weekly email stories and a bilingual computer class",
+    body: ["I build and send the weekly Foto Friday email to 6,000+ subscribers in Mailchimp, plus campaign emails and Squarespace event pages.",
+      "In July 2026 I launched a bilingual computer class at Community Days, with my own slides, hands-on worksheets and QR-linked resources."],
+    chips: ["Mailchimp", "Squarespace", "Spanish / English", "teaching"] },
+  "web": { kicker: "Web · Bay Era Digital", title: "Websites for small businesses and a campaign",
+    body: ["A Squarespace-to-WordPress migration with domain transfer, DNS and Google Workspace email, and the Alexis for Seaside city council campaign site with donation, volunteer and event sign-up paths.",
+      "Backups and disaster-recovery plans keep client sites safe."],
+    chips: ["WordPress", "Squarespace", "DNS", "SEO"] }
+};
+const ALL_WORK = ["photo-wall", "agent-team", "inventory", "points-engine", "paper-to-data", "reports", "guardrails", "market-data", "relay", "hss-promo", "runway", "it-ops", "inbox", "library", "comms", "web"];
+
+/* ---------- Roles (match the résumé tabs) ---------- */
+const ROLES = {
+  "ai-agent": { pill: "AI Agent Engineer", title: "AI Application & Agent Engineer", hero: "agents",
+    thesis: "I build AI agent systems people trust with real work.",
+    lede: "For the past year a team of agents I designed in Claude Code has run day-to-day operations for a San Jose nonprofit: attendance, points, inventory, email. Every risky action passes a guardrail and a person's yes.",
+    stats: [["3,000+", "families scored by a points engine I built"], ["550+", "automated tests guarding the inventory system"], ["300+", "checks across my 5 agent guardrail hooks"], ["100+", "tests on a real-time automation service I built"]],
+    work: ["agent-team", "guardrails", "market-data", "relay", "paper-to-data", "points-engine", "inventory", "inbox", "library", "reports", "it-ops", "photo-wall"],
+    skills: ["agent", "llm", "software", "shipping", "platforms"], resume: "Angel-Garcia-Martinez-AI-Agent-Engineer.pdf", tags: ["ai"] },
+  "fde": { pill: "Forward Deployed", title: "Forward Deployed / AI Deployment Engineer", hero: "paper",
+    thesis: "I learn how the work really happens, then ship tools people actually use.",
+    lede: "At Sunday Friends Foundation I turned paper sign-ins, spreadsheets and email threads into working systems for staff and 3,000+ families, released in small steps, each approved before it went live.",
+    stats: [["12+", "releases of the inventory system in October 2026 alone"], ["650+", "basic-needs bags to 170+ families in Jul–Sep 2026"], ["1,000+", "families in a report where every number links to its sign-in scan"], ["2", "languages for support and training: English and Spanish"]],
+    work: ["inventory", "paper-to-data", "points-engine", "reports", "agent-team", "market-data", "comms", "web", "it-ops", "guardrails", "relay"],
+    skills: ["deploy", "agent", "software", "platforms", "people"], resume: "Angel-Garcia-Martinez-FDE-AI-Deployment-Engineer.pdf", tags: ["ai", "ops"] },
+  "ai-ops": { pill: "AI Automation & Ops", title: "Operations & AI Automation Specialist", hero: "inventory",
+    thesis: "I turn manual, repetitive work into systems that run on their own.",
+    lede: "Points, inventory, attendance, reports and email for a nonprofit serving low-income families, automated with Claude Code, Python and Apps Script, with approval steps, tests and backups on every system.",
+    stats: [["3,000+", "families scored automatically into tiers"], ["7,500+", "attendance records moved from paper into a database"], ["16,000+", "emails archived in approved batches, nothing deleted"], ["6,000+", "subscribers get the weekly email story I build"]],
+    work: ["agent-team", "points-engine", "inventory", "paper-to-data", "reports", "market-data", "relay", "inbox", "library", "comms", "it-ops", "photo-wall"],
+    skills: ["agent", "software", "platforms", "shipping", "people"], resume: "Angel-Garcia-Martinez-AI-Automation-Ops.pdf", tags: ["ai", "ops"] },
+  "it": { pill: "IT Support", title: "IT Support Specialist", hero: "guard",
+    thesis: "The go-to tech person at every job since 2008.",
+    lede: "Google IT Support certified. I run IT for a small nonprofit team, keep its devices and accounts safe, and support the data systems its programs depend on, in English and Spanish.",
+    stats: [["10", "retired MacBook Pros converted to ChromeOS Flex"], ["10", "devices on managed endpoint security"], ["3,500+", "backlogged messages sorted into a 150-label system"], ["2008", "the year I started teaching people computer skills"]],
+    work: ["it-ops", "inbox", "guardrails", "relay", "agent-team", "web", "paper-to-data", "inventory", "points-engine"],
+    skills: ["it", "software", "platforms", "web", "people"], resume: "Angel-Garcia-Martinez-IT-Support.pdf", tags: ["it"] },
+  "creative": { pill: "Creative Technologist", title: "Creative Technologist", hero: "video",
+    thesis: "I build the tools behind the work, then make the work.",
+    lede: "Scripted After Effects, Blender and Python pipelines that turn a folder of event photos into finished reels, plus the photography, video and design that go with them.",
+    stats: [["66 s", "photo-wall recap built from a folder of prints by script"], ["7", "recap cuts delivered for one runway night"], ["1,600+", "items in the media library web app I built"], ["6,000+", "subscribers get the weekly email story I build"]],
+    work: ["photo-wall", "hss-promo", "runway", "library", "agent-team", "comms", "web", "inbox"],
+    skills: ["creative", "software", "web", "photo", "agent"], resume: "Angel-Garcia-Martinez-Creative-Technologist.pdf", tags: ["creative"] },
+  "photo-video": { pill: "Photo & Video", title: "Event Photographer & Videographer", hero: "video",
+    thesis: "Weddings, nightlife, runway and game day, from setup to delivery.",
+    lede: "Wedding and event photography with Addie's Photography, and HighCloudStudios recaps that turn photobooth prints into animated photo walls.",
+    stats: [["10 h", "wedding coverage with a second photographer"], ["200", "retouched photos delivered per wedding"], ["7", "runway recap cuts from one night"], ["9:16", "every recap also cut for phones and screens"]],
+    work: ["photo-wall", "runway", "hss-promo", "comms"],
+    skills: ["photo", "creative", "people"], resume: "Angel-Garcia-Martinez-Photo-Video-Events.pdf", tags: ["creative"] },
+  "cv": { pill: "Full CV", title: "Curriculum Vitae", hero: "video",
+    thesis: "Technology, creative production and community, since 2008.",
+    lede: "I build AI-assisted systems for a nonprofit, run IT, and photograph, film and script the visuals for events. Bilingual English / Spanish, Google IT Support certified.",
+    stats: [["3,000+", "families scored by a points engine I built"], ["550+", "automated tests on an inventory system I built"], ["6,000+", "weekly email subscribers"], ["2008", "the year I started teaching people computer skills"]],
+    work: ALL_WORK, skills: ["agent", "llm", "software", "it", "creative", "photo", "web", "platforms", "people"],
+    resume: "Angel-Garcia-Martinez-CV-Full.pdf", tags: ["ai", "ops", "it", "creative"] }
+};
+const ORDER = ["ai-agent", "fde", "ai-ops", "it", "creative", "photo-video", "cv"];
+
+const SKILLS = {
+  agent: ["Agent engineering", "Claude Code (subagents, skills, hooks, slash commands, headless and scheduled runs), multi-agent orchestration and hand-offs, MCP servers and connectors, tool and API integration, system-prompt design, human-in-the-loop approval, guardrail hooks, headless agents with structured JSON output, prompt-injection defenses"],
+  llm: ["LLM applications", "Vision extraction from handwritten forms, fuzzy matching with confidence tiers and review queues, LLM-assisted email triage, multi-provider model routing (Anthropic, Fireworks), usage and cost tracking"],
+  software: ["Software", "Python (Flask, SQLite, Pillow, browser automation), Google Apps Script (JavaScript), PowerShell, Bash, REST APIs, Google Cloud OAuth, Gmail / Drive / Calendar / Sheets APIs, Mailchimp API, signed API requests (ES256), Server-Sent Events, ffmpeg"],
+  shipping: ["Shipping", "Automated and mock tests, sandbox copies, dry-run → deploy → verify, backups and undo logs, dry runs on live data, off switches, rate limits and circuit breakers, plain-language docs and hand-off notes"],
+  deploy: ["Deployment", "Discovery with users, process mapping, small approved steps, sandbox testing, staged releases, change logs, SOPs and training, bilingual support"],
+  it: ["IT support", "Windows 10/11, macOS, Linux basics, hardware and software troubleshooting, PC builds, TCP/IP, DNS, Wi-Fi and switches, accounts and permissions, Google Workspace administration, Snipe-IT, ChromeOS Flex, Trend Micro endpoint security, NAS, backups and disaster recovery"],
+  creative: ["Creative production", "After Effects (ExtendScript), Premiere Pro, Photoshop, Lightroom, Blender (bpy), Canva, motion graphics, color grading, photobooth operation, Instagram Reels and Stories"],
+  photo: ["Photography", "Events, weddings, portraits, candid and documentary, culling and batch editing, retouching, color grading, instant photobooth delivery by QR code, text or email"],
+  web: ["Web", "WordPress (themes, plugins, migrations, SEO), Squarespace, DNS and domain transfers, hosting and backups"],
+  platforms: ["Platforms", "Google Workspace, PearSuite, Bloomerang CRM, Mailchimp, Squarespace, VolunteerHub, Insightly CRM, Santa Clara County HMIS, Microsoft Office"],
+  people: ["People", "Bilingual English / Spanish, client communication, event logistics, volunteer coordination, training and tutorials"]
+};
+
+const HISTORY = [
+  ["Mar 2025 – now", "Operations & Engagement Coordinator", "Sunday Friends Foundation · San Jose, CA (hybrid)", "AI-assisted systems, IT, reports and communications for a nonprofit serving low-income families.", ["ai", "ops", "it", "creative"]],
+  ["2025 – now", "Founder & Creative Technologist", "HIGHCLOUDSTUDIOS · San Jose, CA", "Scripted photo-wall recaps, event video and photobooth design.", ["creative", "ai"]],
+  ["Jan 2024 – now", "Web Developer, WordPress Specialist", "Bay Era Digital (freelance) · Remote", "Site builds and migrations, DNS and email, backups and SEO.", ["it", "creative", "ops"]],
+  ["Jul 2016 – now", "Co-owner & Lead Photographer", "Addie's Photography · California", "Weddings and events from setup to delivery, video, photobooth operations and the business's tech.", ["creative", "it"]],
+  ["Apr – May 2024", "Community Service Worker", "Sacred Heart Community Service · San Jose, CA", "Led volunteer teams that ran a food pantry; referrals in English and Spanish.", ["ops"]],
+  ["Nov 2019 – Mar 2021", "Warehouse Distribution Specialist", "San José–Evergreen Community College District", "Shipments checked against purchase orders, barcode inventory, campus deliveries.", ["ops"]],
+  ["Oct 2018 – Mar 2019", "Production Associate", "Tesla · Fremont, CA", "Precision assembly; built a live inventory tracker in Google Sheets.", ["ops"]],
+  ["Jan 2009 – Oct 2016", "Hospitality Staff Coordinator", "Servers On Demand · SF Bay Area", "Scheduled 300+ staff; built a WordPress time-collection tool; set up a new office's computers and network.", ["ops", "it"]],
+  ["Jun 2008 – Jun 2010", "Program Coordinator", "One Economy Corporation · San Jose, CA", "Taught computer skills to high school students after finishing the program as a student.", ["it", "ops"]]
+];
+
+/* ---------- Rendering ---------- */
+const $ = id => document.getElementById(id);
+let role = "cv", showAll = false;
+
+function heroVisual(r) {
+  if (r.hero === "video") {
+    return `<figure class="crop" style="margin:0"><div class="phone"><video id="hero-video" autoplay muted loop playsinline preload="metadata" poster="media/v/poster-loop.webp" aria-label="Looping clip of the Oakland Roots photo wall"><source src="media/v/oakland-roots-loop.mp4" type="video/mp4"></video></div><figcaption class="frame-cap">Oakland Roots SC · photo wall · built by script</figcaption></figure>`;
+  }
+  return `<div class="hero-diagram">${diagram(r.hero)}</div>`;
+}
+function mediaHtml(w, r) {
+  const m = w.media || {};
+  const parts = [];
+  if (m.diagram && m.diagram !== r.hero) parts.push(diagram(m.diagram));
+  if (m.posters) parts.push(`<div class="posters"${m.posters.length === 1 ? ' style="grid-template-columns:minmax(0,1fr);max-width:240px;margin-inline:auto;width:100%"' : ""}>` + m.posters.map(([id, src, label]) =>
+    `<button class="poster-btn" type="button" data-play="${id}" aria-label="Play ${esc(label)} in the video reel"><img src="media/v/${src}" alt="" loading="lazy" decoding="async"><span class="play">▶ ${esc(label)}</span></button>`).join("") + `</div>`);
+  if (m.receipt) parts.push(`<div class="receipt" aria-label="Food distribution report summary"><h4>FOOD DISTRIBUTION · OCT 2025 – OCT 2026</h4><div class="row">families served<b>1,000+</b></div><div class="row">people served<b>4,000+</b></div><div class="row">distribution days<b>40+</b></div><div class="ok">✓ every number links to its scanned sign-in sheet</div><hr><h4>QUARTERLY FAMILY REPORT</h4><div class="row">families<b>250+</b></div><div>children 0–5 · online classes · demographics</div></div>`);
+  if (m.bars) parts.push(`<div class="bars" role="img" aria-label="Inbox went from 16,000+ to about 300 emails"><div><div class="lbl"><span>Inbox before</span><span>16,000+</span></div><div class="track"><div class="fill" style="width:100%"></div></div></div><div><div class="lbl"><span>Inbox after</span><span>≈ 300</span></div><div class="track"><div class="fill after" style="width:${(300 / 16000 * 100).toFixed(2)}%"></div></div></div><div class="lbl" style="margin:0"><span>Archived, not deleted</span><span>16,000+</span></div></div>`);
+  if (m.checklist) parts.push(`<ul class="checklist">${m.checklist.map(t => `<li>${esc(t)}</li>`).join("")}</ul>`);
+  if (m.youtube) parts.push(`<div class="yt"><span class="len">90 S · AFTER EFFECTS · 16:9 + 9:16</span><b>“It's Time to Build Your Teams!”</b><span class="links"><a href="https://www.youtube.com/watch?v=NugFSYtmzRk" target="_blank" rel="noopener">Watch on YouTube ↗</a><a href="https://www.youtube.com/shorts/PcVktc6wUIM" target="_blank" rel="noopener">Watch the Short ↗</a></span></div>`);
+  return parts.length ? `<div class="card-media">${parts.join("")}</div>` : "";
+}
+function cardHtml(id, i, r) {
+  const w = WORK[id];
+  const media = mediaHtml(w, r);
+  const wide = i === 0 && media;
+  return `<article class="card${wide ? " wide" : ""}">${media}<div class="card-body"><span class="kicker">${esc(w.kicker)}</span><h3>${esc(w.title)}</h3>` +
+    w.body.map(p => `<p>${esc(p)}</p>`).join("") + (w.result ? `<p class="result">${esc(w.result)}</p>` : "") +
+    `<div class="chips">${w.chips.map(c => `<span class="chip">${esc(c)}</span>`).join("")}</div></div></article>`;
+}
+function renderWork() {
+  const r = ROLES[role], ids = r.work, limit = 6;
+  const shown = showAll ? ids : ids.slice(0, limit);
+  $("work-grid").innerHTML = shown.map((id, i) => cardHtml(id, i, r)).join("");
+  $("work-count").textContent = `${ids.length} projects`;
+  const more = $("more-btn");
+  more.hidden = ids.length <= limit;
+  more.textContent = showAll ? "Show fewer" : `Show all ${ids.length} projects`;
+}
+function renderRole(next, fromLoad) {
+  role = ROLES[next] ? next : "cv";
+  showAll = false;
+  const r = ROLES[role];
+  document.body.dataset.role = role;
+  $("roles").querySelectorAll("a").forEach(a => a.setAttribute("aria-current", a.dataset.role === role ? "page" : "false"));
+  $("role-title").textContent = r.title;
+  $("thesis").textContent = r.thesis;
+  $("lede").textContent = r.lede;
+  const ht = $("hero-text"); ht.classList.remove("fade"); void ht.offsetWidth; ht.classList.add("fade");
+  $("hero-visual").innerHTML = heroVisual(r);
+  setupHeroVideo();
+  $("stats").innerHTML = r.stats.map(([n, t]) => `<div class="stat"><b>${esc(n)}</b><span>${esc(t)}</span></div>`).join("");
+  renderWork();
+  $("skill-grid").innerHTML = r.skills.map(k => `<div class="skill"><h3>${esc(SKILLS[k][0])}</h3><p>${esc(SKILLS[k][1])}</p></div>`).join("");
+  $("skills-tag").textContent = r.pill;
+  $("timeline").innerHTML = HISTORY.map(([when, title, org, line, tags]) =>
+    `<li class="${tags.some(t => r.tags.includes(t)) ? "hl" : ""}"><span class="when">${esc(when)}</span><span class="what"><b>${esc(title)}</b><em>${esc(org)}</em><span>${esc(line)}</span></span></li>`).join("");
+  $("dl-label").textContent = `Résumé PDF · ${r.pill}`;
+  document.title = role === "cv" ? "Angel Garcia Martinez" : `Angel Garcia Martinez · ${r.pill}`;
+  if (!fromLoad) window.scrollTo({ top: 0, behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
+}
+function setupHeroVideo() {
+  const v = $("hero-video");
+  if (!v) return;
+  if (matchMedia("(prefers-reduced-motion: reduce)").matches) { v.removeAttribute("autoplay"); v.pause(); return; }
+  const p = v.play(); if (p && p.catch) p.catch(() => {});
+}
+
+/* Role pills */
+$("roles").innerHTML = ORDER.map(k => `<a class="pill" href="#${k}" data-role="${k}">${esc(ROLES[k].pill)}</a>`).join("");
+const fromHash = () => (location.hash || "").replace(/^#/, "");
+window.addEventListener("hashchange", () => renderRole(fromHash(), false));
+$("more-btn").addEventListener("click", () => { showAll = !showAll; renderWork(); });
+
+/* Poster buttons jump to the reel and play */
+document.addEventListener("click", e => {
+  const b = e.target.closest("[data-play]");
+  if (!b) return;
+  const player = $("p-" + b.dataset.play);
+  if (!player) return;
+  player.scrollIntoView({ behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block: "center" });
+  player.classList.add("focus"); setTimeout(() => player.classList.remove("focus"), 1800);
+  const v = player.querySelector("video"); if (v) { const p = v.play(); if (p && p.catch) p.catch(() => {}); }
+});
+/* Only one reel video plays at a time */
+document.querySelectorAll(".reel video").forEach(v => v.addEventListener("play", () => {
+  document.querySelectorAll(".reel video").forEach(o => { if (o !== v) o.pause(); });
+}));
+
+/* Toast */
+let toastTimer;
+function toast(msg) { const t = $("toast"); t.textContent = msg; t.classList.add("show"); clearTimeout(toastTimer); toastTimer = setTimeout(() => t.classList.remove("show"), 2800); }
+
+/* Copy email */
+$("copy-email").addEventListener("click", () => {
+  const text = $("email").textContent;
+  const fallback = () => { const r = document.createRange(); r.selectNodeContents($("email")); const s = getSelection(); s.removeAllRanges(); s.addRange(r); toast("Email selected. Press Ctrl+C or ⌘C to copy."); };
+  try { navigator.clipboard.writeText(text).then(() => toast("Email copied"), fallback); } catch (e) { fallback(); }
+});
+
+/* Photographs */
+const CATS = [["all", "All"], ["events", "Events"], ["portraits", "Portraits"], ["weddings", "Weddings"], ["booth", "Photobooth"], ["headshots", "Headshots"], ["studio", "Studio"]];
+let filter = "all", visible = [];
+function renderGallery() {
+  visible = PHOTOS.filter(p => filter === "all" || p.group === filter);
+  $("gallery").innerHTML = visible.map((p, i) =>
+    `<figure class="shot"><button type="button" data-shot="${i}" aria-label="Open photo: ${esc(p.alt)}"><img src="media/p/${p.slug}-t.webp" width="${p.tw}" height="${p.th}" alt="${esc(p.alt)}" loading="lazy" decoding="async"></button>` +
+    `<figcaption>${p.frame ? `<span>${esc(p.frame)}</span>` : ""}${p.settings ? `<span>${esc(p.settings)}</span>` : ""}<span class="who">${esc(p.credit)}</span></figcaption></figure>`).join("");
+  $("filters").querySelectorAll("button").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.f === filter)));
+}
+$("filters").innerHTML = CATS.filter(([k]) => k === "all" || PHOTOS.some(p => p.group === k)).map(([k, l]) => `<button type="button" data-f="${k}" aria-pressed="false">${l}</button>`).join("");
+$("filters").addEventListener("click", e => { const b = e.target.closest("button[data-f]"); if (!b) return; filter = b.dataset.f; renderGallery(); });
+
+/* Lightbox */
+const lb = $("lb"); let cur = 0;
+function showShot(i) {
+  cur = (i + visible.length) % visible.length; const p = visible[cur];
+  $("lb-img").src = `media/p/${p.slug}.webp`; $("lb-img").alt = p.alt;
+  $("lb-cap").textContent = [p.alt, p.frame, p.settings, p.credit].filter(Boolean).join("  ·  ");
+}
+$("gallery").addEventListener("click", e => { const b = e.target.closest("button[data-shot]"); if (!b) return; showShot(+b.dataset.shot); if (lb.showModal) lb.showModal(); else lb.setAttribute("open", ""); });
+$("lb-prev").addEventListener("click", () => showShot(cur - 1));
+$("lb-next").addEventListener("click", () => showShot(cur + 1));
+$("lb-close").addEventListener("click", () => lb.close());
+lb.addEventListener("click", e => { if (e.target === lb) lb.close(); });
+lb.addEventListener("keydown", e => { if (e.key === "ArrowLeft") showShot(cur - 1); if (e.key === "ArrowRight") showShot(cur + 1); });
+
+/* Résumé PDFs through the viewer's downloads capability */
+let downloads = null;
+const dlBtn = $("dl-btn");
+dlBtn.addEventListener("click", async () => {
+  const r = ROLES[role];
+  if (!downloads) { const a = document.createElement("a"); a.href = "resumes/" + r.resume; a.download = r.resume; document.body.appendChild(a); a.click(); a.remove(); return; }
+  dlBtn.disabled = true;
+  try {
+    const res = await fetch("resumes/" + r.resume);
+    if (!res.ok) throw new Error("fetch " + res.status);
+    const blob = await res.blob();
+    const out = await downloads.save({ filename: r.resume, data: blob });
+    if (out && out.status === "saved") toast("Saved " + r.resume);
+  } catch (e) {
+    const code = e && e.code;
+    if (code === "declined") { /* the viewer said no */ }
+    else if (code === "rate_limited") toast("A save prompt is already open.");
+    else toast("Couldn't save the PDF here. Copy my email and I'll send it.");
+  } finally { dlBtn.disabled = false; }
+});
+(async () => {
+  try { downloads = window.claude && window.claude.use ? await window.claude.use("downloads") : null; } catch (e) { downloads = null; }
+  dlBtn.hidden = false;
+})();
+
+/* Start */
+renderGallery();
+renderRole(fromHash(), true);
+})();
+</script>
+</body>
+</html>
